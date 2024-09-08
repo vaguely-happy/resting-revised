@@ -1,0 +1,58 @@
+{
+  "Barbarian":{
+    "hit_die": 12,
+    "sub_level": 3
+  },
+  "Bard":{
+    "hit_die": 8,
+    "sub_level": 3
+  },
+  "Cleric":{
+    "hit_die": 8,
+    "sub_level": 3
+  },
+  "Druid":{
+    "hit_die": 8,
+    "sub_level": 3
+  },
+  "Fighter":{
+    "hit_die": 10,
+    "sub_level": 3
+  },
+  "Monk":{
+    "hit_die": 8,
+    "sub_level": 3
+  },
+  "Paladin":{
+    "hit_die": 10,
+    "sub_level": 3
+  },
+  "Ranger":{
+    "hit_die": 10,
+    "sub_level": 3
+  },
+  "Rogue":{
+    "hit_die": 8,
+    "sub_level": 3
+  },
+  "Sorcerer":{
+    "hit_die": 6,
+    "sub_level": 3
+  },
+  "Warlock":{
+    "hit_die": 8,
+    "sub_level": 3
+  },
+  "Wizard":{
+    "hit_die": 6,
+    "sub_level": 3
+  },
+  "Artificer":{
+    "hit_die": 8,
+    "sub_level": 3
+  },
+  "Blood Hunter":{
+    "hit_die": 10,
+    "sub_level": 3
+  }
+}
