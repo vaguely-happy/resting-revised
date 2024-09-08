@@ -46,7 +46,7 @@ ch.modify_hp(hpGain,0,0)
 
 # Code for partial recovery of cc during a short rest
 ccstrings = []
-shortrec = get_svar("shortrec", default=None)
+shortrec = get("shortrec", get_svar("shortrec", default=None))
 if shortrec:
 	cclist = shortrec.split(",")
 	for ccname in cclist:
