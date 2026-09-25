@@ -46,16 +46,22 @@ ch.modify_hp(hpGain,0,0)
 
 # Code for partial recovery of cc during a short rest
 ccstrings = []
-shortrec = get("shortrec", get_svar("shortrec", default=None))
-if shortrec:
-	cclist = shortrec.split(",")
-	for ccname in cclist:
-		if ch.cc_exists(ccname):
-			cc = ch.cc(ccname)
-			if cc.reset_on == "long" and cc.value < cc.max:
-				cc.mod(1)
-				ccstrings.append(ccname + "|" + ch.cc_str(ccname))
 
+get_val = get("shortrec", default=None)
+svar_val = get_svar("shortrec", default=None)
+
+# Split, strip whitespace, filter empties, combine and deduplicate
+get_list = [x.strip() for x in (get_val or "").split(",") if x.strip()]
+svar_list = [x.strip() for x in (svar_val or "").split(",") if x.strip()]
+cclist = list(dict.fromkeys(get_list + svar_list))
+
+if cclist:
+    for ccname in cclist:
+        if ch.cc_exists(ccname):
+            cc = ch.cc(ccname)
+            if cc.reset_on == "long" and cc.value < cc.max:
+                cc.mod(1)
+                ccstrings.append(ccname + "|" + ch.cc_str(ccname))
 
 
 outcommands = ""
